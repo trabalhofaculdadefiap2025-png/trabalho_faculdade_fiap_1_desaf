@@ -48,8 +48,20 @@ docker run -p 8501:8501 suporte-diagnostico
 1. Estratégias de Pré-processamento
 Seleção de Features: Foquei  em 8 features principais (Radius_mean,Perimeter_mean,Area_mean,Radius_worst,Perimeter_worst,Area_worst,Area_se e Texture_worst.) para reduzir a multicolinearidade e simplificar o modelo, mantendo o poder preditivo.
 Observação: Para a escolha dessas colunas foi feita uma análise usando Mapa de calor e Box Plot.
-Exemplo de análise realizada usando Box Plot observe a imagem nesse link abaixo 
-<img width="600" alt="Box Plot da Distribuição do Raio Médio" src="https://github.com/user-attachments/assets/42d98e48-e4c1-4529-b6e2-fae97b640c48" />
+Exemplo de análise realizada usando Box Plot observe a imagem nesse link abaixo :
+
+https://github.com/trabalhofaculdadefiap2025-png/trabalho_faculdade_fiap_1_desaf/issues/6#issue-3527373086
+Tamanho (Mediana e Posição): A mediana dos tumores Malignos é significativamente mais alta, e a caixa está em uma posição superior no gráfico. Isso indica que os tumores malignos tendem a ter um raio médio maior do que os benignos.
+
+Variabilidade: A caixa dos tumores Malignos é mais larga, sugerindo uma maior dispersão (ou variabilidade) nos valores de raio dentro do grupo de casos malignos.
+
+Poder Preditivo: O radius_mean é um forte indicador para o diagnóstico, pois a distinção entre as classes é nítida.
+
+Exemplo 2 de Box plot
+https://github.com/trabalhofaculdadefiap2025-png/trabalho_faculdade_fiap_1_desaf/issues/3#issue-3527366945
+Diferença de Tamanho: Confirma que os tumores Malignos têm um perímetro médio maior, com a mediana e a distribuição geral em uma posição mais alta no gráfico.
+
+Variabilidade e Extremos: O gráfico mostra outliers em ambos os grupos, incluindo tumores malignos com perímetros extremamente altos, reforçando a importância do perimeter_mean na distinção dos diagnósticos.
 
 
 Balanceamento de Classes: Indentifiquei um  o desequilíbrio na base de treino e apliquei  o RandomOverSampler (imblearn) apenas nos dados de treino para equalizar o número de casos Malignos e Benignos e eliminar o viés, evitando que o modelo visse apenas muitos dados de uma determina classe e pouco de outra.
