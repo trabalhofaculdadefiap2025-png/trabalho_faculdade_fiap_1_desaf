@@ -47,7 +47,10 @@ docker run -p 8501:8501 suporte-diagnostico
 🔬 Resultados Obtidos e Relatório
 1. Estratégias de Pré-processamento
 Seleção de Features: Foquei  em 8 features principais (Radius_mean,Perimeter_mean,Area_mean,Radius_worst,Perimeter_worst,Area_worst,Area_se e Texture_worst.) para reduzir a multicolinearidade e simplificar o modelo, mantendo o poder preditivo.
-Observação: Para a escolha dessas colunas foi feita uma análise usando Mapa de calor e Box Plot.  
+Observação: Para a escolha dessas colunas foi feita uma análise usando Mapa de calor e Box Plot.
+Exemplo de análise realizada usando Box Plot observe a imagem nesse link abaixo 
+<img width="600" alt="Box Plot da Distribuição do Raio Médio" src="https://github.com/user-attachments/assets/42d98e48-e4c1-4529-b6e2-fae97b640c48" />
+
 
 Balanceamento de Classes: Indentifiquei um  o desequilíbrio na base de treino e apliquei  o RandomOverSampler (imblearn) apenas nos dados de treino para equalizar o número de casos Malignos e Benignos e eliminar o viés, evitando que o modelo visse apenas muitos dados de uma determina classe e pouco de outra.
 
